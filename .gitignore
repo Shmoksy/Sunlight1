@@ -1,0 +1,38 @@
+using System;
+
+class MainClass
+{
+    public static void Main()
+    {
+        int n = int.Parse(Console.ReadLine());
+        int s = ((n - 1) / 2) + n;
+        Console.WriteLine("{0}{1}{0}", new string('.', s), new string('*', 1));
+        for (int i = 1, z = s - 2; i < n; i++, z--)
+        {
+            Console.WriteLine("{0}{1}{2}{1}{2}{1}{0}", new string('.', i), new string('*', 1), new string('.', z));
+
+        }
+        for (int b = 1; b <= n - 1; b++)
+        {
+            if (b <= (n - 1) / 2)
+            {
+                Console.WriteLine("{0}{1}{0}", new string('.', n), new string('*', n));
+            }
+            if (b == (n - 1) / 2)
+            {
+                Console.WriteLine("{0}", new string('*', n * 3));
+            }
+            if (b > (n - 1) / 2)
+            {
+                Console.WriteLine("{0}{1}{0}", new string('.', n), new string('*', n));
+            }
+        }
+        for (int i = n - 1, y = 1; y <= n - 1; i--, y++)
+        {
+            Console.WriteLine("{0}{1}{2}{1}{2}{1}{0}", new string('.', i), new string('*', 1), new string('.', ((n * 3) - (i * 2) - 3) / 2));
+
+        }
+        Console.WriteLine("{0}{1}{0}", new string('.', s), new string('*', 1));
+    }
+
+}
